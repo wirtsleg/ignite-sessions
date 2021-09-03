@@ -1,0 +1,8 @@
+ignite.addresses: 127.0.0.1:10800
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ignitesessions
+    username: postgres
+    password: postgrespass

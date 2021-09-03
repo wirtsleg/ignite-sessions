@@ -1,0 +1,32 @@
+version: '3.2'
+
+volumes:
+  postgres:
+  ignite:
+
+services:
+  ignite:
+    image: apacheignite/ignite:2.10.0
+    container_name: ignite
+    volumes:
+      - type: volume
+        source: ignite
+        target: /storage
+    environment:
+      - "IGNITE_WORK_DIR=/storage"
+    ports:
+      - "10800:10800"
+
+  postgres:
+    image: postgres:13.3
+    container_name: postgres
+    volumes:
+      - type: volume
+        source: postgres
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespass
+    ports:
+      - "5432:5432"
