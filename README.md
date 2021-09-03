@@ -1,4 +1,4 @@
-# Ignite Sessions
+# Spring Sessions with Ignite Sessions
 
 Demo application showing how to store Spring sessions in Apache Ignite.
 
