@@ -9,7 +9,7 @@ import java.time.Duration;
 
 @Repository
 @RequiredArgsConstructor
-public class IgniteSessionRepository implements  org.springframework.session.SessionRepository<MapSession> {
+public class IgniteSessionRepository implements org.springframework.session.SessionRepository<MapSession> {
     private final SessionRepository sessionRepo;
 
     @Value("${sessions.maxInactiveInterval:1800}")
