@@ -2,7 +2,6 @@ package com.github.wirtsleg.ignitesessions.config;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.ignite.Ignition;
-import org.apache.ignite.client.ClientException;
 import org.apache.ignite.client.IgniteClient;
 import org.apache.ignite.configuration.ClientConfiguration;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,11 +23,6 @@ public class ApplicationConfig {
         ClientConfiguration cfg = new ClientConfiguration()
             .setAddresses(addresses.toArray(new String[0]));
 
-        try {
-            return Ignition.startClient(cfg);
-        } catch (ClientException e) {
-            e.printStackTrace();
-            throw e;
-        }
+        return Ignition.startClient(cfg);
     }
 }
