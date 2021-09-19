@@ -10,6 +10,11 @@ import javax.cache.expiry.ExpiryPolicy;
 import java.io.Serializable;
 import java.util.Map;
 
+/**
+ * New version of Spring Data has different signatures from
+ * {@link org.apache.ignite.springdata22.repository.IgniteRepository}, so we have to create this interface
+ * until it is fixed.
+ */
 @NoRepositoryBean
 public interface IgniteRepository<V, K extends Serializable> extends CrudRepository<V, K> {
     Ignite ignite();
